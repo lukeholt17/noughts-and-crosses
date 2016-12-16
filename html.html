@@ -1,0 +1,103 @@
+<html>
+	<head>
+		<title>NOUGHTS AND CROSSES</title>
+		<script src="JavaScript.js"></script>
+		<style>
+				button{
+				
+					width:250px;
+					height:250px;
+					background-color: hotpink;
+					border: black;
+					text-align: center;
+					font-size: 175px;
+					cursor: pointer;
+    
+    
+				}
+			</style>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script>
+		var storage = 0
+		$(document).ready(function(){
+				for (let i = 0; i < size; i++){
+					for (let j = 0; j < size; j++){
+						let button = $("#" + i + "-" + j)		
+						button.click(function(){
+							if (checkSpace (i, j)){
+								next(button)
+							}
+							
+						
+					
+						})
+					}
+				}
+			})
+		
+		function next(button){
+		let ID = button.attr("id")
+			if (storage % 2 === 0){
+				button.text("X")
+				placement(ID, "X")
+				
+			}
+			else{
+				button.text("O")
+				placement(ID, "O")
+			}
+			
+			
+			storage++
+			
+			endGame()
+		
+		}
+		
+		
+		</script>
+	</head>
+	<body>
+		<table>
+			<tr>
+				<td>
+					<button  id = "0-0"></button>
+				</td>
+				<td>
+					<button id = "0-1"></button>
+				</td>
+				<td>
+					<button id = "0-2"></button>
+				</td>
+				
+			</tr>
+			<tr>
+				<td>
+					<button id = "1-0"></button>
+				</td>
+				<td>
+					<button id = "1-1" ></button>
+				</td>
+				<td>
+					<button id = "1-2"></button>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<button id = "2-0"></button>
+				</td>
+				<td>
+					<button id = "2-1"></button>
+				</td>
+				<td>
+					<button id = "2-2"></button>
+				</td>
+			</tr>
+		
+		
+		</table>
+	</body>
+</html>
+	
+	
+
